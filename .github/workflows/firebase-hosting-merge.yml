@@ -22,18 +22,15 @@ jobs:
           flutter-version: "3.0.0"
           channel: "stable"
 
-      - name: go into website directory 
-        run: cd website && ls
-
       - name: Flutter clean 🧹
-        run: flutter clean & flutter pub cache repair
+        run: cd website && flutter clean & flutter pub cache repair
 
       - name: Install dependencies ⬇️
-        run: flutter pub get
+        run: cd website && flutter pub get
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
-      - run: flutter build web
+      - run: cd website && flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
