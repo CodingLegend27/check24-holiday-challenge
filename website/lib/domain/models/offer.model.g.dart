@@ -7,24 +7,23 @@ part of 'offer.model.dart';
 // **************************************************************************
 
 _$_Offer _$$_OfferFromJson(Map<String, dynamic> json) => _$_Offer(
-      hotelId: json['hotelid'] as int,
-      departureDate: DateTime.parse(json['departuredate'] as String),
-      returnDate: DateTime.parse(json['returndate'] as String),
-      countAdults: json['countadults'] as int,
-      countChildren: json['countchildren'] as int,
+      hotelId: toInt(json['hotelid'] as String),
+      departureDate: toDateTime(json['departuredate'] as String),
+      returnDate: toDateTime(json['returndate'] as String),
+      countAdults: toInt(json['countadults'] as String),
+      countChildren: toInt(json['countchildren'] as String),
       price: json['price'] as int,
       inboundDepartureAirport: json['inbounddepartureairport'] as String,
       inboundArrivalAirport: json['inboundarrivalairport'] as String,
       inboundAirline: json['inboundairline'] as String,
-      inboundArrivalTime:
-          DateTime.parse(json['inboundarrivaldatetime'] as String),
+      inboundArrivalTime: toDateTime(json['inboundarrivaldatetime'] as String),
       outboundDepartureAirport: json['outbounddepartureairport'] as String,
       outboundArrivalAirport: json['outboundarrivalairport'] as String,
       outboundAirline: json['outboundairline'] as String,
       outboundArrivalTime:
-          DateTime.parse(json['outboundarrivaldatetime'] as String),
+          toDateTime(json['outboundarrivaldatetime'] as String),
       mealType: json['mealtype'] as String,
-      isOceanView: json['oceanview'] as bool,
+      isOceanView: toBool(json['oceanview'] as String),
       roomType: json['roomtype'] as String,
     );
 

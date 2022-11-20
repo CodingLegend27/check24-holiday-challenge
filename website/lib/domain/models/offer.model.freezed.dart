@@ -20,15 +20,15 @@ Offer _$OfferFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Offer {
-  @JsonKey(name: 'hotelid')
+  @JsonKey(name: 'hotelid', fromJson: toInt)
   int get hotelId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'departuredate')
+  @JsonKey(name: 'departuredate', fromJson: toDateTime)
   DateTime get departureDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'returndate')
+  @JsonKey(name: 'returndate', fromJson: toDateTime)
   DateTime get returnDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'countadults')
+  @JsonKey(name: 'countadults', fromJson: toInt)
   int get countAdults => throw _privateConstructorUsedError;
-  @JsonKey(name: 'countchildren')
+  @JsonKey(name: 'countchildren', fromJson: toInt)
   int get countChildren => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   @JsonKey(name: 'inbounddepartureairport')
@@ -37,7 +37,7 @@ mixin _$Offer {
   String get inboundArrivalAirport => throw _privateConstructorUsedError;
   @JsonKey(name: 'inboundairline')
   String get inboundAirline => throw _privateConstructorUsedError;
-  @JsonKey(name: 'inboundarrivaldatetime')
+  @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
   DateTime get inboundArrivalTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'outbounddepartureairport')
   String get outboundDepartureAirport => throw _privateConstructorUsedError;
@@ -45,11 +45,11 @@ mixin _$Offer {
   String get outboundArrivalAirport => throw _privateConstructorUsedError;
   @JsonKey(name: 'outboundairline')
   String get outboundAirline => throw _privateConstructorUsedError;
-  @JsonKey(name: 'outboundarrivaldatetime')
+  @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
   DateTime get outboundArrivalTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'mealtype')
   String get mealType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'oceanview')
+  @JsonKey(name: 'oceanview', fromJson: toBool)
   bool get isOceanView => throw _privateConstructorUsedError;
   @JsonKey(name: 'roomtype')
   String get roomType => throw _privateConstructorUsedError;
@@ -65,15 +65,15 @@ abstract class $OfferCopyWith<$Res> {
       _$OfferCopyWithImpl<$Res, Offer>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'hotelid')
+      {@JsonKey(name: 'hotelid', fromJson: toInt)
           int hotelId,
-      @JsonKey(name: 'departuredate')
+      @JsonKey(name: 'departuredate', fromJson: toDateTime)
           DateTime departureDate,
-      @JsonKey(name: 'returndate')
+      @JsonKey(name: 'returndate', fromJson: toDateTime)
           DateTime returnDate,
-      @JsonKey(name: 'countadults')
+      @JsonKey(name: 'countadults', fromJson: toInt)
           int countAdults,
-      @JsonKey(name: 'countchildren')
+      @JsonKey(name: 'countchildren', fromJson: toInt)
           int countChildren,
       int price,
       @JsonKey(name: 'inbounddepartureairport')
@@ -82,7 +82,7 @@ abstract class $OfferCopyWith<$Res> {
           String inboundArrivalAirport,
       @JsonKey(name: 'inboundairline')
           String inboundAirline,
-      @JsonKey(name: 'inboundarrivaldatetime')
+      @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
           DateTime inboundArrivalTime,
       @JsonKey(name: 'outbounddepartureairport')
           String outboundDepartureAirport,
@@ -90,11 +90,11 @@ abstract class $OfferCopyWith<$Res> {
           String outboundArrivalAirport,
       @JsonKey(name: 'outboundairline')
           String outboundAirline,
-      @JsonKey(name: 'outboundarrivaldatetime')
+      @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
           DateTime outboundArrivalTime,
       @JsonKey(name: 'mealtype')
           String mealType,
-      @JsonKey(name: 'oceanview')
+      @JsonKey(name: 'oceanview', fromJson: toBool)
           bool isOceanView,
       @JsonKey(name: 'roomtype')
           String roomType});
@@ -211,15 +211,15 @@ abstract class _$$_OfferCopyWith<$Res> implements $OfferCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'hotelid')
+      {@JsonKey(name: 'hotelid', fromJson: toInt)
           int hotelId,
-      @JsonKey(name: 'departuredate')
+      @JsonKey(name: 'departuredate', fromJson: toDateTime)
           DateTime departureDate,
-      @JsonKey(name: 'returndate')
+      @JsonKey(name: 'returndate', fromJson: toDateTime)
           DateTime returnDate,
-      @JsonKey(name: 'countadults')
+      @JsonKey(name: 'countadults', fromJson: toInt)
           int countAdults,
-      @JsonKey(name: 'countchildren')
+      @JsonKey(name: 'countchildren', fromJson: toInt)
           int countChildren,
       int price,
       @JsonKey(name: 'inbounddepartureairport')
@@ -228,7 +228,7 @@ abstract class _$$_OfferCopyWith<$Res> implements $OfferCopyWith<$Res> {
           String inboundArrivalAirport,
       @JsonKey(name: 'inboundairline')
           String inboundAirline,
-      @JsonKey(name: 'inboundarrivaldatetime')
+      @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
           DateTime inboundArrivalTime,
       @JsonKey(name: 'outbounddepartureairport')
           String outboundDepartureAirport,
@@ -236,11 +236,11 @@ abstract class _$$_OfferCopyWith<$Res> implements $OfferCopyWith<$Res> {
           String outboundArrivalAirport,
       @JsonKey(name: 'outboundairline')
           String outboundAirline,
-      @JsonKey(name: 'outboundarrivaldatetime')
+      @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
           DateTime outboundArrivalTime,
       @JsonKey(name: 'mealtype')
           String mealType,
-      @JsonKey(name: 'oceanview')
+      @JsonKey(name: 'oceanview', fromJson: toBool)
           bool isOceanView,
       @JsonKey(name: 'roomtype')
           String roomType});
@@ -350,15 +350,15 @@ class __$$_OfferCopyWithImpl<$Res> extends _$OfferCopyWithImpl<$Res, _$_Offer>
 @JsonSerializable()
 class _$_Offer extends _Offer {
   const _$_Offer(
-      {@JsonKey(name: 'hotelid')
+      {@JsonKey(name: 'hotelid', fromJson: toInt)
           required this.hotelId,
-      @JsonKey(name: 'departuredate')
+      @JsonKey(name: 'departuredate', fromJson: toDateTime)
           required this.departureDate,
-      @JsonKey(name: 'returndate')
+      @JsonKey(name: 'returndate', fromJson: toDateTime)
           required this.returnDate,
-      @JsonKey(name: 'countadults')
+      @JsonKey(name: 'countadults', fromJson: toInt)
           required this.countAdults,
-      @JsonKey(name: 'countchildren')
+      @JsonKey(name: 'countchildren', fromJson: toInt)
           required this.countChildren,
       required this.price,
       @JsonKey(name: 'inbounddepartureairport')
@@ -367,7 +367,7 @@ class _$_Offer extends _Offer {
           required this.inboundArrivalAirport,
       @JsonKey(name: 'inboundairline')
           required this.inboundAirline,
-      @JsonKey(name: 'inboundarrivaldatetime')
+      @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
           required this.inboundArrivalTime,
       @JsonKey(name: 'outbounddepartureairport')
           required this.outboundDepartureAirport,
@@ -375,11 +375,11 @@ class _$_Offer extends _Offer {
           required this.outboundArrivalAirport,
       @JsonKey(name: 'outboundairline')
           required this.outboundAirline,
-      @JsonKey(name: 'outboundarrivaldatetime')
+      @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
           required this.outboundArrivalTime,
       @JsonKey(name: 'mealtype')
           required this.mealType,
-      @JsonKey(name: 'oceanview')
+      @JsonKey(name: 'oceanview', fromJson: toBool)
           required this.isOceanView,
       @JsonKey(name: 'roomtype')
           required this.roomType})
@@ -389,19 +389,19 @@ class _$_Offer extends _Offer {
       _$$_OfferFromJson(json);
 
   @override
-  @JsonKey(name: 'hotelid')
+  @JsonKey(name: 'hotelid', fromJson: toInt)
   final int hotelId;
   @override
-  @JsonKey(name: 'departuredate')
+  @JsonKey(name: 'departuredate', fromJson: toDateTime)
   final DateTime departureDate;
   @override
-  @JsonKey(name: 'returndate')
+  @JsonKey(name: 'returndate', fromJson: toDateTime)
   final DateTime returnDate;
   @override
-  @JsonKey(name: 'countadults')
+  @JsonKey(name: 'countadults', fromJson: toInt)
   final int countAdults;
   @override
-  @JsonKey(name: 'countchildren')
+  @JsonKey(name: 'countchildren', fromJson: toInt)
   final int countChildren;
   @override
   final int price;
@@ -415,7 +415,7 @@ class _$_Offer extends _Offer {
   @JsonKey(name: 'inboundairline')
   final String inboundAirline;
   @override
-  @JsonKey(name: 'inboundarrivaldatetime')
+  @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
   final DateTime inboundArrivalTime;
   @override
   @JsonKey(name: 'outbounddepartureairport')
@@ -427,13 +427,13 @@ class _$_Offer extends _Offer {
   @JsonKey(name: 'outboundairline')
   final String outboundAirline;
   @override
-  @JsonKey(name: 'outboundarrivaldatetime')
+  @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
   final DateTime outboundArrivalTime;
   @override
   @JsonKey(name: 'mealtype')
   final String mealType;
   @override
-  @JsonKey(name: 'oceanview')
+  @JsonKey(name: 'oceanview', fromJson: toBool)
   final bool isOceanView;
   @override
   @JsonKey(name: 'roomtype')
@@ -523,15 +523,15 @@ class _$_Offer extends _Offer {
 
 abstract class _Offer extends Offer {
   const factory _Offer(
-      {@JsonKey(name: 'hotelid')
+      {@JsonKey(name: 'hotelid', fromJson: toInt)
           required final int hotelId,
-      @JsonKey(name: 'departuredate')
+      @JsonKey(name: 'departuredate', fromJson: toDateTime)
           required final DateTime departureDate,
-      @JsonKey(name: 'returndate')
+      @JsonKey(name: 'returndate', fromJson: toDateTime)
           required final DateTime returnDate,
-      @JsonKey(name: 'countadults')
+      @JsonKey(name: 'countadults', fromJson: toInt)
           required final int countAdults,
-      @JsonKey(name: 'countchildren')
+      @JsonKey(name: 'countchildren', fromJson: toInt)
           required final int countChildren,
       required final int price,
       @JsonKey(name: 'inbounddepartureairport')
@@ -540,7 +540,7 @@ abstract class _Offer extends Offer {
           required final String inboundArrivalAirport,
       @JsonKey(name: 'inboundairline')
           required final String inboundAirline,
-      @JsonKey(name: 'inboundarrivaldatetime')
+      @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
           required final DateTime inboundArrivalTime,
       @JsonKey(name: 'outbounddepartureairport')
           required final String outboundDepartureAirport,
@@ -548,11 +548,11 @@ abstract class _Offer extends Offer {
           required final String outboundArrivalAirport,
       @JsonKey(name: 'outboundairline')
           required final String outboundAirline,
-      @JsonKey(name: 'outboundarrivaldatetime')
+      @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
           required final DateTime outboundArrivalTime,
       @JsonKey(name: 'mealtype')
           required final String mealType,
-      @JsonKey(name: 'oceanview')
+      @JsonKey(name: 'oceanview', fromJson: toBool)
           required final bool isOceanView,
       @JsonKey(name: 'roomtype')
           required final String roomType}) = _$_Offer;
@@ -561,19 +561,19 @@ abstract class _Offer extends Offer {
   factory _Offer.fromJson(Map<String, dynamic> json) = _$_Offer.fromJson;
 
   @override
-  @JsonKey(name: 'hotelid')
+  @JsonKey(name: 'hotelid', fromJson: toInt)
   int get hotelId;
   @override
-  @JsonKey(name: 'departuredate')
+  @JsonKey(name: 'departuredate', fromJson: toDateTime)
   DateTime get departureDate;
   @override
-  @JsonKey(name: 'returndate')
+  @JsonKey(name: 'returndate', fromJson: toDateTime)
   DateTime get returnDate;
   @override
-  @JsonKey(name: 'countadults')
+  @JsonKey(name: 'countadults', fromJson: toInt)
   int get countAdults;
   @override
-  @JsonKey(name: 'countchildren')
+  @JsonKey(name: 'countchildren', fromJson: toInt)
   int get countChildren;
   @override
   int get price;
@@ -587,7 +587,7 @@ abstract class _Offer extends Offer {
   @JsonKey(name: 'inboundairline')
   String get inboundAirline;
   @override
-  @JsonKey(name: 'inboundarrivaldatetime')
+  @JsonKey(name: 'inboundarrivaldatetime', fromJson: toDateTime)
   DateTime get inboundArrivalTime;
   @override
   @JsonKey(name: 'outbounddepartureairport')
@@ -599,13 +599,13 @@ abstract class _Offer extends Offer {
   @JsonKey(name: 'outboundairline')
   String get outboundAirline;
   @override
-  @JsonKey(name: 'outboundarrivaldatetime')
+  @JsonKey(name: 'outboundarrivaldatetime', fromJson: toDateTime)
   DateTime get outboundArrivalTime;
   @override
   @JsonKey(name: 'mealtype')
   String get mealType;
   @override
-  @JsonKey(name: 'oceanview')
+  @JsonKey(name: 'oceanview', fromJson: toBool)
   bool get isOceanView;
   @override
   @JsonKey(name: 'roomtype')

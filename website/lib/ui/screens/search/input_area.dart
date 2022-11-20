@@ -71,7 +71,8 @@ class _InputAreaState extends State<InputArea> {
                 onPressed: () async {
                   final date = await showDatePicker(
                     context: context,
-                    initialDate: DateTime.now().add(const Duration(days: 1)),
+                    initialDate: earliestStart ??
+                        DateTime.now().add(const Duration(days: 1)),
                     firstDate: DateTime.now(),
                     lastDate: DateTime.now().add(const Duration(days: 365)),
                   );
@@ -102,7 +103,8 @@ class _InputAreaState extends State<InputArea> {
               onPressed: () async {
                 final date = await showDatePicker(
                   context: context,
-                  initialDate: DateTime.now().add(const Duration(days: 2)),
+                  initialDate:
+                      latestEnd ?? DateTime.now().add(const Duration(days: 5)),
                   firstDate: DateTime.now().add(const Duration(days: 1)),
                   lastDate: DateTime.now().add(const Duration(days: 365)),
                 );

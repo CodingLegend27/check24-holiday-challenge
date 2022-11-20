@@ -11,7 +11,6 @@ part 'router.gr.dart';
       page: MainScreen,
       path: '/',
       initial: true,
-      children: [],
     )
   ],
 )
