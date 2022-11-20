@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:holiday_aggregator_24/domain/repositories/search.repository.dart';
 import 'package:holiday_aggregator_24/domain/services/api.dart';
 import 'package:holiday_aggregator_24/domain/services/services_injection.dart';
+import 'package:holiday_aggregator_24/firebase_options.dart';
 import 'package:holiday_aggregator_24/routes/router.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   serviceInjection();
   runApp(const HolidayAggregator24());
 }
