@@ -7,9 +7,14 @@ const breakPoint = 800;
 class SearchResults extends StatelessWidget {
   final List<Offer> offers;
   final List<Hotel> hotels;
+  final void Function(Hotel) onHotelSelect;
 
-  const SearchResults({Key? key, required this.offers, required this.hotels})
-      : super(key: key);
+  const SearchResults({
+    Key? key,
+    required this.offers,
+    required this.hotels,
+    required this.onHotelSelect,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +60,7 @@ class SearchResults extends StatelessWidget {
                             "to the offers",
                             style: TextStyle(color: Colors.white),
                           ),
-                          // TODO add link to other page
-                          onPressed: () => () {},
+                          onPressed: () => onHotelSelect(hotel),
                         )
                       ],
                     ),
