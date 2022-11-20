@@ -52,11 +52,21 @@ class _InputAreaState extends State<InputArea> {
                 height: inputFieldHeight,
                 minWidth: inputFieldWidth,
                 color: Colors.white,
-                child: Text(
-                  earliestStart?.toDate() ?? "select departure date",
-                  style: const TextStyle(
-                    fontSize: 17,
-                  ),
+                child: Column(
+                  children: [
+                    const Text(
+                      "select departure date",
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
+                    ),
+                    Text(
+                      earliestStart?.toDate() ?? "",
+                      style: const TextStyle(
+                        fontSize: 17,
+                      ),
+                    ),
+                  ],
                 ),
                 onPressed: () async {
                   final date = await showDatePicker(
@@ -73,11 +83,21 @@ class _InputAreaState extends State<InputArea> {
               height: inputFieldHeight,
               minWidth: inputFieldWidth,
               color: Colors.white,
-              child: Text(
-                latestEnd?.toDate() ?? "select latest return date",
-                style: const TextStyle(
-                  fontSize: 17,
-                ),
+              child: Column(
+                children: [
+                  const Text(
+                    "select latest return date",
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  Text(
+                    latestEnd?.toDate() ?? "",
+                    style: const TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ],
               ),
               onPressed: () async {
                 final date = await showDatePicker(
@@ -211,25 +231,25 @@ class _DropdownButtonStringState extends State<_DropdownButtonString> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: inputFieldHeight,
-      child: Material(
-        child: DropdownButton(
+    return Material(
+      child: SizedBox(
+        height: inputFieldHeight,
+        width: inputFieldWidth,
+        child: DropdownButtonFormField(
+          isExpanded: true,
           icon: widget.icon,
           value: curValue,
           alignment: Alignment.center,
-          hint: SizedBox(
-            width: inputFieldWidth - 24,
-            child: Text(
-              widget.hint,
-              textAlign: TextAlign.center,
-            ),
+          decoration: InputDecoration(
+            labelText: widget.hint,
           ),
           items: widget.items
               .map(
                 (e) => DropdownMenuItem<String>(
                   value: e,
-                  child: Text(e),
+                  child: SizedBox(
+                    child: Text(e),
+                  ),
                 ),
               )
               .toList(),
