@@ -89,4 +89,6 @@ def hotel_offers(id):
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM offers WHERE hotelid = :id", {'id': id})
     data = cursor.fetchmany(RESULTS_SIZE)
-    return jsonify(data_to_offers(data))
+    offers = [data_to_offer(d) for d in data]
+    print(offers)
+    return jsonify(offers)
