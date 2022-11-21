@@ -12,7 +12,7 @@ RESULTS_SIZE = 10
 
 
 def get_db_connection():
-    connection = sqlite3.connect('db.sqlite3')
+    connection = sqlite3.connect('../db.sqlite3')
     return connection
 
 
