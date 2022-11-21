@@ -20,8 +20,5 @@ class _MainScreenState extends State<MainScreen> {
         body: const SearchScreen(),
       ),
     );
-
-    // TODO
-    // return const SearchScreen();
   }
 }

@@ -63,7 +63,6 @@ class _SearchViewState extends State<SearchView> {
                         );
                       },
                     ),
-                    // TODO activate this again
                     model.state.map(
                       error: (_) => _error(),
                       loading: (_) => _loading(),
@@ -79,50 +78,6 @@ class _SearchViewState extends State<SearchView> {
                         offers: state.offers,
                       ),
                     )
-                    // _currentHotel == null
-                    //     ? SearchResults(
-                    //         onHotelSelect: (Hotel hotel) {
-                    //           setState(() {
-                    //             _currentHotel = hotel;
-                    //           });
-                    //         },
-                    //         offers: List.filled(
-                    //           10,
-                    //           Offer(
-                    //             hotelId: 1,
-                    //             departureDate: DateTime.now(),
-                    //             returnDate:
-                    //                 DateTime.now().add(const Duration(days: 1)),
-                    //             countAdults: 2,
-                    //             countChildren: 1,
-                    //             price: 100,
-                    //             inboundDepartureAirport:
-                    //                 "inboundDepartureAirport",
-                    //             inboundArrivalAirport: "inboundArrivalAirport",
-                    //             inboundAirline: "",
-                    //             inboundArrivalTime: DateTime.now(),
-                    //             outboundDepartureAirport: "",
-                    //             outboundArrivalAirport: "",
-                    //             outboundAirline: "",
-                    //             outboundArrivalTime: DateTime.now(),
-                    //             mealType: "mealType",
-                    //             isOceanView: false,
-                    //             roomType: "roomtype",
-                    //           ),
-                    //         ),
-                    //         hotels: List.filled(
-                    //           10,
-                    //           const Hotel(
-                    //               id: 2,
-                    //               name: "Hotel Test",
-                    //               latitude: 0,
-                    //               longitude: 0,
-                    //               hotelStars: 4),
-                    //         ),
-                    //       )
-                    //     : HotelView(
-                    //       hotel: _currentHotel,
-                    //     )
                   ],
                 ),
               ),
