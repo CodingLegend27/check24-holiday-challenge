@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:holiday_aggregator_24/domain/models/hotel.model.dart';
-import 'package:holiday_aggregator_24/domain/models/offer.model.dart';
 import 'package:holiday_aggregator_24/domain/repositories/search.repository.dart';
 import 'package:holiday_aggregator_24/ui/screens/search/hotel_offers.dart';
 
