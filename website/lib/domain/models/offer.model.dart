@@ -40,12 +40,3 @@ class Offer with _$Offer {
 
   factory Offer.fromJson(Map<String, dynamic> json) => _$OfferFromJson(json);
 }
-
-// @freezed
-// class MealType with _$MealType {
-//   // TODO: are there some more mealtypes ?
-//   const factory MealType.none() = _None;
-//   const factory MealType.breakfast() = _Breakfast;
-//   const factory MealType.halfboard() = _Halfboard;
-//   const factory MealType.allinclusive() = _
-// }
