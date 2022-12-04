@@ -88,8 +88,8 @@ class SearchResults extends StatelessWidget {
                                     "${offer.returnDate.difference(offer.departureDate).inDays} days"),
                                 Text("${offer.countAdults} adults"),
                                 Text("${offer.countChildren} children"),
-                                Text(offer.mealType),
-                                Text(offer.roomType),
+                                Text("included meal: ${offer.mealType}"),
+                                Text("room type: ${offer.roomType}"),
                               ],
                             ),
                           )
