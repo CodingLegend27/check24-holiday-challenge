@@ -10,7 +10,7 @@ class Hotel with _$Hotel {
     @JsonKey(name: 'hotelname') required String name,
     required double latitude,
     required double longitude,
-    @JsonKey(name: 'hotelstars') required double hotelStars,
+    @JsonKey(name: 'hotelstars') required double stars,
   }) = _Hotel;
 
   const Hotel._();

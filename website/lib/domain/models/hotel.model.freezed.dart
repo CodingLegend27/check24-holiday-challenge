@@ -27,7 +27,7 @@ mixin _$Hotel {
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
   @JsonKey(name: 'hotelstars')
-  double get hotelStars => throw _privateConstructorUsedError;
+  double get stars => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +44,7 @@ abstract class $HotelCopyWith<$Res> {
       @JsonKey(name: 'hotelname') String name,
       double latitude,
       double longitude,
-      @JsonKey(name: 'hotelstars') double hotelStars});
+      @JsonKey(name: 'hotelstars') double stars});
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$HotelCopyWithImpl<$Res, $Val extends Hotel>
     Object? name = null,
     Object? latitude = null,
     Object? longitude = null,
-    Object? hotelStars = null,
+    Object? stars = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,9 +83,9 @@ class _$HotelCopyWithImpl<$Res, $Val extends Hotel>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      hotelStars: null == hotelStars
-          ? _value.hotelStars
-          : hotelStars // ignore: cast_nullable_to_non_nullable
+      stars: null == stars
+          ? _value.stars
+          : stars // ignore: cast_nullable_to_non_nullable
               as double,
     ) as $Val);
   }
@@ -102,7 +102,7 @@ abstract class _$$_HotelCopyWith<$Res> implements $HotelCopyWith<$Res> {
       @JsonKey(name: 'hotelname') String name,
       double latitude,
       double longitude,
-      @JsonKey(name: 'hotelstars') double hotelStars});
+      @JsonKey(name: 'hotelstars') double stars});
 }
 
 /// @nodoc
@@ -118,7 +118,7 @@ class __$$_HotelCopyWithImpl<$Res> extends _$HotelCopyWithImpl<$Res, _$_Hotel>
     Object? name = null,
     Object? latitude = null,
     Object? longitude = null,
-    Object? hotelStars = null,
+    Object? stars = null,
   }) {
     return _then(_$_Hotel(
       id: null == id
@@ -137,9 +137,9 @@ class __$$_HotelCopyWithImpl<$Res> extends _$HotelCopyWithImpl<$Res, _$_Hotel>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      hotelStars: null == hotelStars
-          ? _value.hotelStars
-          : hotelStars // ignore: cast_nullable_to_non_nullable
+      stars: null == stars
+          ? _value.stars
+          : stars // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -153,7 +153,7 @@ class _$_Hotel extends _Hotel {
       @JsonKey(name: 'hotelname') required this.name,
       required this.latitude,
       required this.longitude,
-      @JsonKey(name: 'hotelstars') required this.hotelStars})
+      @JsonKey(name: 'hotelstars') required this.stars})
       : super._();
 
   factory _$_Hotel.fromJson(Map<String, dynamic> json) =>
@@ -171,11 +171,11 @@ class _$_Hotel extends _Hotel {
   final double longitude;
   @override
   @JsonKey(name: 'hotelstars')
-  final double hotelStars;
+  final double stars;
 
   @override
   String toString() {
-    return 'Hotel(id: $id, name: $name, latitude: $latitude, longitude: $longitude, hotelStars: $hotelStars)';
+    return 'Hotel(id: $id, name: $name, latitude: $latitude, longitude: $longitude, stars: $stars)';
   }
 
   @override
@@ -189,14 +189,13 @@ class _$_Hotel extends _Hotel {
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
-            (identical(other.hotelStars, hotelStars) ||
-                other.hotelStars == hotelStars));
+            (identical(other.stars, stars) || other.stars == stars));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, name, latitude, longitude, hotelStars);
+      Object.hash(runtimeType, id, name, latitude, longitude, stars);
 
   @JsonKey(ignore: true)
   @override
@@ -214,12 +213,11 @@ class _$_Hotel extends _Hotel {
 
 abstract class _Hotel extends Hotel {
   const factory _Hotel(
-          {@JsonKey(name: 'hotelid') required final int id,
-          @JsonKey(name: 'hotelname') required final String name,
-          required final double latitude,
-          required final double longitude,
-          @JsonKey(name: 'hotelstars') required final double hotelStars}) =
-      _$_Hotel;
+      {@JsonKey(name: 'hotelid') required final int id,
+      @JsonKey(name: 'hotelname') required final String name,
+      required final double latitude,
+      required final double longitude,
+      @JsonKey(name: 'hotelstars') required final double stars}) = _$_Hotel;
   const _Hotel._() : super._();
 
   factory _Hotel.fromJson(Map<String, dynamic> json) = _$_Hotel.fromJson;
@@ -236,7 +234,7 @@ abstract class _Hotel extends Hotel {
   double get longitude;
   @override
   @JsonKey(name: 'hotelstars')
-  double get hotelStars;
+  double get stars;
   @override
   @JsonKey(ignore: true)
   _$$_HotelCopyWith<_$_Hotel> get copyWith =>

@@ -20,7 +20,7 @@ void main() {
     // assert
     expect(hotel.id, 164);
     expect(hotel.name, "Barcelo Illetas Albatros - Erwachsenenhotel");
-    expect(hotel.hotelStars, 4.0);
+    expect(hotel.stars, 4.0);
     expect(hotel.latitude, 39.54565944);
     expect(hotel.longitude, 2.589135459);
   });

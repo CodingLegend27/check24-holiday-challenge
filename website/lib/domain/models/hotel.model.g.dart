@@ -11,7 +11,7 @@ _$_Hotel _$$_HotelFromJson(Map<String, dynamic> json) => _$_Hotel(
       name: json['hotelname'] as String,
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
-      hotelStars: (json['hotelstars'] as num).toDouble(),
+      stars: (json['hotelstars'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_HotelToJson(_$_Hotel instance) => <String, dynamic>{
@@ -19,5 +19,5 @@ Map<String, dynamic> _$$_HotelToJson(_$_Hotel instance) => <String, dynamic>{
       'hotelname': instance.name,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
-      'hotelstars': instance.hotelStars,
+      'hotelstars': instance.stars,
     };

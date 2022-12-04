@@ -54,7 +54,7 @@ class SearchResults extends StatelessWidget {
                             spacing: 4,
                             children: [
                               Text(hotel.name),
-                              Text("${hotel.hotelStars} stars"),
+                              Text("${hotel.stars} stars"),
                               Text("${offer.price} €"),
                               const SizedBox(height: 4),
                               MaterialButton(
