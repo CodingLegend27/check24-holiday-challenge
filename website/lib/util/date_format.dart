@@ -9,3 +9,7 @@ extension DateFormatter on DateTime {
 
   get time => "$hour:$minute";
 }
+
+extension TimeFormatter on Duration {
+  get hoursMinutes => "$inHours:${(inMinutes % 60).toString().padLeft(2, '0')}";
+}
