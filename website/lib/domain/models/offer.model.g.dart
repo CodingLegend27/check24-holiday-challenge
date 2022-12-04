@@ -7,11 +7,11 @@ part of 'offer.model.dart';
 // **************************************************************************
 
 _$_Offer _$$_OfferFromJson(Map<String, dynamic> json) => _$_Offer(
-      hotelId: toInt(json['hotelid'] as String),
+      hotelId: json['hotelid'] as int,
       departureDate: toDateTime(json['departuredate'] as String),
       returnDate: toDateTime(json['returndate'] as String),
-      countAdults: toInt(json['countadults'] as String),
-      countChildren: toInt(json['countchildren'] as String),
+      countAdults: json['countadults'] as int,
+      countChildren: json['countchildren'] as int,
       price: json['price'] as int,
       inboundDepartureAirport: json['inbounddepartureairport'] as String,
       inboundArrivalAirport: json['inboundarrivalairport'] as String,
@@ -23,7 +23,7 @@ _$_Offer _$$_OfferFromJson(Map<String, dynamic> json) => _$_Offer(
       outboundArrivalTime:
           toDateTime(json['outboundarrivaldatetime'] as String),
       mealType: json['mealtype'] as String,
-      isOceanView: toBool(json['oceanview'] as String),
+      isOceanView: json['oceanview'] as bool,
       roomType: json['roomtype'] as String,
     );
 
