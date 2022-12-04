@@ -49,36 +49,49 @@ class SearchResults extends StatelessWidget {
                             size: 80,
                           ),
                           const SizedBox(width: 10),
-                          Wrap(
-                            direction: Axis.vertical,
-                            spacing: 4,
-                            children: [
-                              Text(hotel.name),
-                              Text("${hotel.stars} stars"),
-                              Text("${offer.price} €"),
-                              const SizedBox(height: 4),
-                              MaterialButton(
-                                color: Colors.blue,
-                                child: const Text(
-                                  "to the offers",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () => onHotelSelect(hotel),
-                              )
-                            ],
+                          SizedBox(
+                            width: 200,
+                            child: Wrap(
+                              direction: Axis.vertical,
+                              spacing: 4,
+                              children: [
+                                SizedBox(
+                                    width: 200,
+                                    child: Text(
+                                      hotel.name,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )),
+                                Text("${hotel.stars} stars"),
+                                Text("${offer.price} €"),
+                                const SizedBox(height: 4),
+                                MaterialButton(
+                                  color: Colors.blue,
+                                  child: const Text(
+                                    "to the offers",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () => onHotelSelect(hotel),
+                                )
+                              ],
+                            ),
                           ),
                           const SizedBox(width: 16, height: 16),
-                          Wrap(
-                            direction: Axis.vertical,
-                            spacing: 4,
-                            children: [
-                              Text(
-                                  "${offer.returnDate.difference(offer.departureDate).inDays} days"),
-                              Text("${offer.countAdults} adults"),
-                              Text("${offer.countChildren} children"),
-                              Text(offer.mealType),
-                              Text(offer.roomType),
-                            ],
+                          SizedBox(
+                            width: 200,
+                            child: Wrap(
+                              direction: Axis.vertical,
+                              spacing: 4,
+                              children: [
+                                Text(
+                                    "${offer.returnDate.difference(offer.departureDate).inDays} days"),
+                                Text("${offer.countAdults} adults"),
+                                Text("${offer.countChildren} children"),
+                                Text(offer.mealType),
+                                Text(offer.roomType),
+                              ],
+                            ),
                           )
                         ],
                       ),
