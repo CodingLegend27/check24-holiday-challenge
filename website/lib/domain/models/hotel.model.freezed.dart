@@ -20,7 +20,9 @@ Hotel _$HotelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Hotel {
+  @JsonKey(name: 'hotelid')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'hotelname')
   String get name => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -38,8 +40,8 @@ abstract class $HotelCopyWith<$Res> {
       _$HotelCopyWithImpl<$Res, Hotel>;
   @useResult
   $Res call(
-      {int id,
-      String name,
+      {@JsonKey(name: 'hotelid') int id,
+      @JsonKey(name: 'hotelname') String name,
       double latitude,
       double longitude,
       @JsonKey(name: 'hotelstars') double hotelStars});
@@ -96,8 +98,8 @@ abstract class _$$_HotelCopyWith<$Res> implements $HotelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
+      {@JsonKey(name: 'hotelid') int id,
+      @JsonKey(name: 'hotelname') String name,
       double latitude,
       double longitude,
       @JsonKey(name: 'hotelstars') double hotelStars});
@@ -147,8 +149,8 @@ class __$$_HotelCopyWithImpl<$Res> extends _$HotelCopyWithImpl<$Res, _$_Hotel>
 @JsonSerializable()
 class _$_Hotel extends _Hotel {
   const _$_Hotel(
-      {required this.id,
-      required this.name,
+      {@JsonKey(name: 'hotelid') required this.id,
+      @JsonKey(name: 'hotelname') required this.name,
       required this.latitude,
       required this.longitude,
       @JsonKey(name: 'hotelstars') required this.hotelStars})
@@ -158,8 +160,10 @@ class _$_Hotel extends _Hotel {
       _$$_HotelFromJson(json);
 
   @override
+  @JsonKey(name: 'hotelid')
   final int id;
   @override
+  @JsonKey(name: 'hotelname')
   final String name;
   @override
   final double latitude;
@@ -210,8 +214,8 @@ class _$_Hotel extends _Hotel {
 
 abstract class _Hotel extends Hotel {
   const factory _Hotel(
-          {required final int id,
-          required final String name,
+          {@JsonKey(name: 'hotelid') required final int id,
+          @JsonKey(name: 'hotelname') required final String name,
           required final double latitude,
           required final double longitude,
           @JsonKey(name: 'hotelstars') required final double hotelStars}) =
@@ -221,8 +225,10 @@ abstract class _Hotel extends Hotel {
   factory _Hotel.fromJson(Map<String, dynamic> json) = _$_Hotel.fromJson;
 
   @override
+  @JsonKey(name: 'hotelid')
   int get id;
   @override
+  @JsonKey(name: 'hotelname')
   String get name;
   @override
   double get latitude;

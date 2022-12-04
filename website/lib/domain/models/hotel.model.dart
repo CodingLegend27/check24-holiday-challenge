@@ -6,8 +6,8 @@ part 'hotel.model.freezed.dart';
 @freezed
 class Hotel with _$Hotel {
   const factory Hotel({
-    required int id,
-    required String name,
+    @JsonKey(name: 'hotelid') required int id,
+    @JsonKey(name: 'hotelname') required String name,
     required double latitude,
     required double longitude,
     @JsonKey(name: 'hotelstars') required double hotelStars,

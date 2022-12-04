@@ -7,16 +7,16 @@ part of 'hotel.model.dart';
 // **************************************************************************
 
 _$_Hotel _$$_HotelFromJson(Map<String, dynamic> json) => _$_Hotel(
-      id: json['id'] as int,
-      name: json['name'] as String,
+      id: json['hotelid'] as int,
+      name: json['hotelname'] as String,
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       hotelStars: (json['hotelstars'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_HotelToJson(_$_Hotel instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
+      'hotelid': instance.id,
+      'hotelname': instance.name,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'hotelstars': instance.hotelStars,
