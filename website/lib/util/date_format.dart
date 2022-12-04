@@ -7,7 +7,8 @@ extension DateFormatter on DateTime {
   get dayMonthYear =>
       "${day.toString().padLeft(2, '0')}.${month.toString().padLeft(2, '0')}.${year.toString()}";
 
-  get time => "$hour:$minute";
+  get time =>
+      "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}";
 }
 
 extension TimeFormatter on Duration {
