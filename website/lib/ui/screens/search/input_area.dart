@@ -61,7 +61,7 @@ class _InputAreaState extends State<InputArea> {
                       ),
                     ),
                     Text(
-                      earliestStart?.toDate() ?? "",
+                      earliestStart?.yearMonthDay ?? "",
                       style: const TextStyle(
                         fontSize: 17,
                       ),
@@ -93,7 +93,7 @@ class _InputAreaState extends State<InputArea> {
                     ),
                   ),
                   Text(
-                    latestEnd?.toDate() ?? "",
+                    latestEnd?.yearMonthDay ?? "",
                     style: const TextStyle(
                       fontSize: 17,
                     ),
