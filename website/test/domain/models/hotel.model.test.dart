@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:holiday_aggregator_24/domain/models/hotel.model.dart';
 
