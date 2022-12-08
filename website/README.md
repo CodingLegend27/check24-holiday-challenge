@@ -29,12 +29,12 @@ Tech Stack: Flutter Web Application with MVVM and repositories architecture
 - in the `ui` we have just one folder: `screens`
     - `screens` contains just one screen, namely `search`
         - we have different files for the elements showed in the search screen
-        - for every screen we have one viewmodel which uses BLoC to update the UI with a new state if needed
+        - for every screen (here: search) we have one viewmodel which uses BLoC to update the UI with a new state if needed
     - normally, we would have an additional `widgets` folder here; since the UI is not so complex and custom widgets with themes are not implement, we don't need this folder
 - `util` contains helper functions to 
     - format a date to a string in a custom way
     - log debug statements and errors
-    - some more functions to convert a String to an Integer, DateTime, or Bool if needed
+    - some more functions to convert a String to a DateTime if needed
 - both `firebase_options.dart` and `generated_plugin_registrant.dart` are auto-generated, so they won't be further explained
 - `main.dart` is the entry point of the app and starts the `serviceInjection` and the application itself (contained in `main.screen.dart`)
 - `main.screen.dart` contains the UI entry point of the app (`MaterialApp`) and returns the `SearchScreen` as the `body`
@@ -48,7 +48,7 @@ $ flutter run -d chrome
 
 ## Side Note
 ### Rebuilding of the Auto-Generated Files
-to rebuild the auto-generated files, such as by the `freezed` or the `auto_route` package, execute:
+to rebuild the auto-generated files, such as needed by the `freezed` or the `auto_route` package, execute:
 ```
 $ flutter pub run build_runner build --delete-conflicting-outputs
 ```
