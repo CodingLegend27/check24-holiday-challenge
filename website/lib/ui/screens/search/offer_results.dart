@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:holiday_aggregator_24/domain/models/hotel.model.dart';
 import 'package:holiday_aggregator_24/domain/models/offer.model.dart';
-
-const breakPoint = 800;
+import 'package:holiday_aggregator_24/ui/screens/search/search.screen.dart';
 
 class SearchResults extends StatelessWidget {
   final List<Offer> offers;
