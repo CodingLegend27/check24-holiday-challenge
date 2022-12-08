@@ -23,6 +23,8 @@ class SearchViewModel extends RxCubit<SearchState> {
   List<String> _destinations = [];
   List<String> get destinations => _destinations;
 
+  SearchParameters? _parameters;
+
   void _departureAirportsListener(List<String> airports) {
     _departureAirports = airports;
     notifyListeners();
@@ -37,6 +39,7 @@ class SearchViewModel extends RxCubit<SearchState> {
     required SearchParameters parameters,
   }) async {
     emit(const _Loading());
+    _parameters = parameters;
     try {
       final offers = await _searchRepository.searchOffer(
         searchParameters: parameters,
@@ -55,7 +58,10 @@ class SearchViewModel extends RxCubit<SearchState> {
   Future<void> onHotelSelect(Hotel hotel) async {
     emit(const _Loading());
     try {
-      final offers = await _searchRepository.getOffersForHotel(hotel.id);
+      final offers = await _searchRepository.getOffersForHotel(
+        id: hotel.id,
+        parameters: _parameters!,
+      );
       emit(_HotelOffers(hotel: hotel, offers: offers));
     } catch (e) {
       emit(const _Error());

@@ -29,8 +29,10 @@ def query():
     data = request.get_json()
     earliest_start = data['earliest_start']
     latest_end = data['latest_end']
-    starting_airport = iata_converter.get_airport_by_IATA(data['starting_airport'])
-    destination_airport = iata_converter.get_airport_by_IATA(data['destination_airport'])
+    starting_airport = iata_converter.get_airport_by_IATA(
+        data['starting_airport'])
+    destination_airport = iata_converter.get_airport_by_IATA(
+        data['destination_airport'])
     count_adults = data['count_adults']
     count_children = data['count_children']
     duration = data['duration']
@@ -66,7 +68,7 @@ def departure_airports():
 
     cursor.execute("SELECT DISTINCT outbounddepartureairport FROM offers")
     iata_codes = cursor.fetchall()
-    
+
     print(iata_codes)
 
     # convert IATA codes to airport names
@@ -104,11 +106,39 @@ def hotel(id):
     return jsonify(hotel)
 
 
-@app.get('/hotel_offers/<id>')
-def hotel_offers(id):
+@app.route('/hotel_offers', methods=['GET', 'POST'])
+def hotel_offers():
+    data = request.get_json()
+    earliest_start = data['earliest_start']
+    latest_end = data['latest_end']
+    starting_airport = iata_converter.get_airport_by_IATA(
+        data['starting_airport'])
+    destination_airport = iata_converter.get_airport_by_IATA(
+        data['destination_airport'])
+    count_adults = data['count_adults']
+    count_children = data['count_children']
+    duration = data['duration']
+    hotel_id = data['hotel_id']
+
     connection = get_db_connection()
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM offers WHERE hotelid = :id", {'id': id})
+
+    cursor.execute("""SELECT * 
+        FROM offers 
+        WHERE departuredate >= :earliest_start
+        AND returndate <= :latest_end
+        AND inboundarrivalairport = :starting_airport
+        AND outbounddepartureairport = :starting_airport
+        AND inbounddepartureairport = :destination_airport
+        AND outboundarrivalairport = :destination_airport
+        AND countadults = :count_adults
+        AND countchildren = :count_children
+        AND CAST(JULIANDAY(returndate) - JULIANDAY(departuredate) AS INT) = :duration
+        AND hotelid = :hotel_id
+        """, {'earliest_start': earliest_start, 'latest_end': latest_end, 'starting_airport': starting_airport,
+              'destination_airport': destination_airport, 'count_adults': count_adults, 'count_children':
+              count_children, 'duration': duration, 'hotel_id': hotel_id})
+
     data = cursor.fetchmany(RESULTS_SIZE)
     offers = [data_to_offer(data=d, converter=iata_converter) for d in data]
     print(offers)

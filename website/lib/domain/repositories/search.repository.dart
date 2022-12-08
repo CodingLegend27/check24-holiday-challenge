@@ -93,12 +93,25 @@ class SearchRepository extends ChangeNotifier {
     }
   }
 
-  Future<List<Offer>> getOffersForHotel(int hotelId) async {
+  Future<List<Offer>> getOffersForHotel({
+    required int id,
+    required SearchParameters parameters,
+  }) async {
     try {
-      final response = await _api.get('hotel_offers/$hotelId');
+      final response = await _api.post(path: 'hotel_offers', body: {
+        'earliest_start': parameters.startDate.toIso8601String(),
+        'latest_end': parameters.endDate.toIso8601String(),
+        'starting_airport': parameters.startingAirport,
+        'destination_airport': parameters.destinationAirport,
+        'count_adults': parameters.countAdults,
+        'count_children': parameters.countChildren,
+        'duration': parameters.duration,
+        'hotel_id': id,
+      });
+
       return (response as List).map((e) => Offer.fromJson(e)).toList();
     } catch (e, s) {
-      debugLogError('error fetching offers for hotel with id $hotelId', e, s);
+      debugLogError('error fetching offers for hotel with id $id', e, s);
       rethrow;
     }
   }
