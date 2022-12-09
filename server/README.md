@@ -52,6 +52,7 @@ run these commands in a terminal in the root folder:
 ## Project Structure
 - python files are in the `lib` folder
 - core functionality: `app.py`
+- iata converter: `iata_converter.py`
 - util functions: `utils.py` => help to create a JSON object that should be returned in some GET requests
 
 ## Start the Server
